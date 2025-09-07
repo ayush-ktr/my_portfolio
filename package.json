@@ -2,7 +2,6 @@
   "name": "my_portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/ayush-ktr/my_portfolio",
   "dependencies": {
     "@mui/styles": "^6.4.8",
     "@reduxjs/toolkit": "^2.9.0",

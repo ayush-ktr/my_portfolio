@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { makeStyles } from "@mui/styles";
 import clsx from "clsx";
 
@@ -75,10 +75,10 @@ const useStyles = makeStyles({
   },
   windowBody: {
     flex: 1,
-    padding: "15px",
+    padding: "15px 0px 15px 15px",
     fontFamily: "'Courier New', Courier, monospace",
     fontSize: "14px",
-    overflowY: "auto",
+    overflowY: "hidden",
   },
 });
 
@@ -92,6 +92,8 @@ const Window = ({
   children,
 }) => {
   const classes = useStyles();
+
+  const terminalRef = useRef(null);
 
   const closeWindow = () => {
     onWindowClose();

@@ -5,15 +5,18 @@ const initialState = {
   isMinimized: false,
   isActive: true,
   isTerminalCleared: false,
-  terminalOutput: [{"command":""}],
+  terminalOutput: [],
   commands: [
     { key: "whoami", description: "Who am i?" },
     { key: "skills", description: "View my current skills" },
     { key: "projects", description: "View all my Projects" },
-    { key: "repo", description: "View the project source. [repo {project_name}]" },
+    {
+      key: "repo",
+      description: "View the project source. [repo {project_name}]",
+    },
     { key: "socials", description: "View my Socials" },
     { key: "clear", description: "Clear the terminal" },
-  ]
+  ],
 };
 
 const windowSlice = createSlice({
@@ -35,9 +38,9 @@ const windowSlice = createSlice({
       state.terminalOutput = [...state.terminalOutput, action.payload];
     },
     clearTerminal(state) {
-      state.terminalOutput = [{"command":""}];
+      state.terminalOutput = [];
       state.isTerminalCleared = true;
-    }
+    },
   },
 });
 
@@ -46,5 +49,6 @@ export const {
   toggleMinimize,
   toggleActive,
   appendTerminalOutput,
+  clearTerminal,
 } = windowSlice.actions;
 export default windowSlice.reducer;

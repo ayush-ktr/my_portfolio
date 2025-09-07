@@ -1,17 +1,54 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-pre{
+pre {
   margin: 0;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  div {
+    scrollbar-width: thin;
+  }
+}
+
+div::-webkit-scrollbar {
+  /* Total Width (incl. left + right gaps + scrollbar), 30px equivalent */
+  width: 1.6666rem;
+  /* 30px equivalent */
+  height: 1.3875rem;
+}
+
+div::-webkit-scrollbar-track {
+  border-radius: 1.11rem;
+}
+
+div::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 1.11rem;
+  /* Left & Right gaps through transparent border, 10px + 10px equivalent */
+  border: 0.555rem solid transparent;
+  background-clip: content-box;
+}
+
+div:hover::-webkit-scrollbar-thumb {
+  /* rgba(97, 112, 123, 1) */
+  background: rgba(97, 112, 123, 1);
+  border-radius: 1.11rem;
+  border: 0.555rem solid transparent;
+  background-clip: content-box;
+}
+
+div::-webkit-scrollbar-corner {
+  background: transparent;
 }
